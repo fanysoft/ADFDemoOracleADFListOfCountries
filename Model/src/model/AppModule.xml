@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="windows-1250" ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+<!---->
+<AppModule
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="AppModule"
+  Version="12.2.1.0.31"
+  InheritPersonalization="merge"
+  ClearCacheOnRollback="true">
+  <ViewUsage
+    Name="AppsCountriesDetailedView1"
+    ViewObjectName="model.AppsCountriesDetailedView"/>
+  <ViewUsage
+    Name="AppsCountriesDetailedView1READONLY1"
+    ViewObjectName="model.AppsCountriesDetailedView1READONLY"/>
+</AppModule>

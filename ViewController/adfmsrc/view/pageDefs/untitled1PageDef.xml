@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.0.31" id="untitled1PageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="AppsCountriesDetailedView1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="AppsCountriesDetailedView1Iterator"/>
+    <searchRegion Binds="AppsCountriesDetailedView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="AppsCountriesDetailedView1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="AppsCountriesDetailedView1Iterator" id="AppsCountriesDetailedView1">
+      <nodeDefinition DefName="model.AppsCountriesDetailedView" Name="AppsCountriesDetailedView10">
+        <AttrNames>
+          <Item Value="Countrycode"/>
+          <Item Value="Countryname"/>
+          <Item Value="Capital"/>
+          <Item Value="Continentname"/>
+          <Item Value="Continent"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="AppsCountriesDetailedView1Iterator" id="Id">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AppsCountriesDetailedView1Iterator" id="Countrycode">
+      <AttrNames>
+        <Item Value="Countrycode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AppsCountriesDetailedView1Iterator" id="Countryname">
+      <AttrNames>
+        <Item Value="Countryname"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AppsCountriesDetailedView1Iterator" id="Currencycode">
+      <AttrNames>
+        <Item Value="Currencycode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AppsCountriesDetailedView1Iterator" id="Fipscode">
+      <AttrNames>
+        <Item Value="Fipscode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AppsCountriesDetailedView1Iterator" id="Isonumeric">
+      <AttrNames>
+        <Item Value="Isonumeric"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AppsCountriesDetailedView1Iterator" id="North">
+      <AttrNames>
+        <Item Value="North"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AppsCountriesDetailedView1Iterator" id="South">
+      <AttrNames>
+        <Item Value="South"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AppsCountriesDetailedView1Iterator" id="East">
+      <AttrNames>
+        <Item Value="East"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AppsCountriesDetailedView1Iterator" id="West">
+      <AttrNames>
+        <Item Value="West"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AppsCountriesDetailedView1Iterator" id="Capital">
+      <AttrNames>
+        <Item Value="Capital"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AppsCountriesDetailedView1Iterator" id="Continentname">
+      <AttrNames>
+        <Item Value="Continentname"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AppsCountriesDetailedView1Iterator" id="Continent">
+      <AttrNames>
+        <Item Value="Continent"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AppsCountriesDetailedView1Iterator" id="Languages">
+      <AttrNames>
+        <Item Value="Languages"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AppsCountriesDetailedView1Iterator" id="Isoalpha3">
+      <AttrNames>
+        <Item Value="Isoalpha3"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AppsCountriesDetailedView1Iterator" id="Geonameid">
+      <AttrNames>
+        <Item Value="Geonameid"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="AppsCountriesDetailedView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="AppsCountriesDetailedView1Iterator" id="Previous" RequiresUpdateModel="true"
+            Action="previous"/>
+    <action IterBinding="AppsCountriesDetailedView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="AppsCountriesDetailedView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+  </bindings>
+</pageDefinition>

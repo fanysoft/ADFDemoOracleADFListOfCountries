@@ -1,0 +1,235 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="untitled1.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:pageTemplate viewId="/oracle/templates/threeColumnTemplate.jspx" id="pt1">
+                <f:facet name="center">
+                    <af:panelSplitter id="ps1" orientation="vertical">
+                        <f:facet name="first">
+                            <af:panelAccordion discloseMany="false" id="pa1">
+                                <af:showDetailItem id="pane1" text="List Of Countries">
+                                    <af:table value="#{bindings.AppsCountriesDetailedView1.collectionModel}" var="row"
+                                              rows="#{bindings.AppsCountriesDetailedView1.rangeSize}"
+                                              emptyText="#{bindings.AppsCountriesDetailedView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                              rowBandingInterval="0"
+                                              selectedRowKeys="#{bindings.AppsCountriesDetailedView1.collectionModel.selectedRow}"
+                                              selectionListener="#{bindings.AppsCountriesDetailedView1.collectionModel.makeCurrent}"
+                                              rowSelection="single"
+                                              fetchSize="#{bindings.AppsCountriesDetailedView1.rangeSize}"
+                                              filterModel="#{bindings.AppsCountriesDetailedView1Query.queryDescriptor}"
+                                              filterVisible="true"
+                                              queryListener="#{bindings.AppsCountriesDetailedView1Query.processQuery}"
+                                              varStatus="vs" id="t1" partialTriggers="::b1 ::b2 ::b3 ::b4">
+                                        <af:column sortProperty="#{bindings.AppsCountriesDetailedView1.hints.Countrycode.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.AppsCountriesDetailedView1.hints.Countrycode.label}"
+                                                   id="c1">
+                                            <af:outputText value="#{row.Countrycode}"
+                                                           shortDesc="#{bindings.AppsCountriesDetailedView1.hints.Countrycode.tooltip}"
+                                                           id="ot1"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.AppsCountriesDetailedView1.hints.Countryname.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.AppsCountriesDetailedView1.hints.Countryname.label}"
+                                                   id="c2">
+                                            <af:outputText value="#{row.Countryname}"
+                                                           shortDesc="#{bindings.AppsCountriesDetailedView1.hints.Countryname.tooltip}"
+                                                           id="ot2"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.AppsCountriesDetailedView1.hints.Capital.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.AppsCountriesDetailedView1.hints.Capital.label}"
+                                                   id="c3">
+                                            <af:outputText value="#{row.Capital}"
+                                                           shortDesc="#{bindings.AppsCountriesDetailedView1.hints.Capital.tooltip}"
+                                                           id="ot3"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.AppsCountriesDetailedView1.hints.Continentname.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.AppsCountriesDetailedView1.hints.Continentname.label}"
+                                                   id="c4">
+                                            <af:outputText value="#{row.Continentname}"
+                                                           shortDesc="#{bindings.AppsCountriesDetailedView1.hints.Continentname.tooltip}"
+                                                           id="ot4"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.AppsCountriesDetailedView1.hints.Continent.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.AppsCountriesDetailedView1.hints.Continent.label}"
+                                                   id="c5">
+                                            <af:outputText value="#{row.Continent}"
+                                                           shortDesc="#{bindings.AppsCountriesDetailedView1.hints.Continent.tooltip}"
+                                                           id="ot5"/>
+                                        </af:column>
+                                    </af:table>
+                                </af:showDetailItem>
+                            </af:panelAccordion>
+                        </f:facet>
+                        <f:facet name="second">
+                            <af:panelAccordion discloseMany="false" id="pa2">
+                                <af:showDetailItem id="pane2" text="Detail for Country">
+                                    <af:panelFormLayout id="pfl1">
+                                        <af:inputText value="#{bindings.Id.inputValue}"
+                                                      label="#{bindings.Id.hints.label}"
+                                                      required="#{bindings.Id.hints.mandatory}" readOnly="true"
+                                                      columns="#{bindings.Id.hints.displayWidth}"
+                                                      maximumLength="#{bindings.Id.hints.precision}"
+                                                      shortDesc="#{bindings.Id.hints.tooltip}" id="it1">
+                                            <f:validator binding="#{bindings.Id.validator}"/>
+                                            <af:convertNumber groupingUsed="false" pattern="#{bindings.Id.format}"/>
+                                        </af:inputText>
+                                        <af:inputText value="#{bindings.Countrycode.inputValue}"
+                                                      label="#{bindings.Countrycode.hints.label}"
+                                                      required="#{bindings.Countrycode.hints.mandatory}" readOnly="true"
+                                                      columns="#{bindings.Countrycode.hints.displayWidth}"
+                                                      maximumLength="#{bindings.Countrycode.hints.precision}"
+                                                      shortDesc="#{bindings.Countrycode.hints.tooltip}" id="it2">
+                                            <f:validator binding="#{bindings.Countrycode.validator}"/>
+                                        </af:inputText>
+                                        <af:inputText value="#{bindings.Countryname.inputValue}"
+                                                      label="#{bindings.Countryname.hints.label}"
+                                                      required="#{bindings.Countryname.hints.mandatory}" readOnly="true"
+                                                      columns="#{bindings.Countryname.hints.displayWidth}"
+                                                      maximumLength="#{bindings.Countryname.hints.precision}"
+                                                      shortDesc="#{bindings.Countryname.hints.tooltip}" id="it3">
+                                            <f:validator binding="#{bindings.Countryname.validator}"/>
+                                        </af:inputText>
+                                        <af:inputText value="#{bindings.Currencycode.inputValue}"
+                                                      label="#{bindings.Currencycode.hints.label}"
+                                                      required="#{bindings.Currencycode.hints.mandatory}"
+                                                      readOnly="true"
+                                                      columns="#{bindings.Currencycode.hints.displayWidth}"
+                                                      maximumLength="#{bindings.Currencycode.hints.precision}"
+                                                      shortDesc="#{bindings.Currencycode.hints.tooltip}" id="it4">
+                                            <f:validator binding="#{bindings.Currencycode.validator}"/>
+                                        </af:inputText>
+                                        <af:inputText value="#{bindings.Fipscode.inputValue}"
+                                                      label="#{bindings.Fipscode.hints.label}"
+                                                      required="#{bindings.Fipscode.hints.mandatory}" readOnly="true"
+                                                      columns="#{bindings.Fipscode.hints.displayWidth}"
+                                                      maximumLength="#{bindings.Fipscode.hints.precision}"
+                                                      shortDesc="#{bindings.Fipscode.hints.tooltip}" id="it5">
+                                            <f:validator binding="#{bindings.Fipscode.validator}"/>
+                                        </af:inputText>
+                                        <af:inputText value="#{bindings.Isonumeric.inputValue}"
+                                                      label="#{bindings.Isonumeric.hints.label}"
+                                                      required="#{bindings.Isonumeric.hints.mandatory}" readOnly="true"
+                                                      columns="#{bindings.Isonumeric.hints.displayWidth}"
+                                                      maximumLength="#{bindings.Isonumeric.hints.precision}"
+                                                      shortDesc="#{bindings.Isonumeric.hints.tooltip}" id="it6">
+                                            <f:validator binding="#{bindings.Isonumeric.validator}"/>
+                                        </af:inputText>
+                                        <af:inputText value="#{bindings.North.inputValue}"
+                                                      label="#{bindings.North.hints.label}"
+                                                      required="#{bindings.North.hints.mandatory}" readOnly="true"
+                                                      columns="#{bindings.North.hints.displayWidth}"
+                                                      maximumLength="#{bindings.North.hints.precision}"
+                                                      shortDesc="#{bindings.North.hints.tooltip}" id="it7">
+                                            <f:validator binding="#{bindings.North.validator}"/>
+                                        </af:inputText>
+                                        <af:inputText value="#{bindings.South.inputValue}"
+                                                      label="#{bindings.South.hints.label}"
+                                                      required="#{bindings.South.hints.mandatory}" readOnly="true"
+                                                      columns="#{bindings.South.hints.displayWidth}"
+                                                      maximumLength="#{bindings.South.hints.precision}"
+                                                      shortDesc="#{bindings.South.hints.tooltip}" id="it8">
+                                            <f:validator binding="#{bindings.South.validator}"/>
+                                        </af:inputText>
+                                        <af:inputText value="#{bindings.East.inputValue}"
+                                                      label="#{bindings.East.hints.label}"
+                                                      required="#{bindings.East.hints.mandatory}" readOnly="true"
+                                                      columns="#{bindings.East.hints.displayWidth}"
+                                                      maximumLength="#{bindings.East.hints.precision}"
+                                                      shortDesc="#{bindings.East.hints.tooltip}" id="it9">
+                                            <f:validator binding="#{bindings.East.validator}"/>
+                                        </af:inputText>
+                                        <af:inputText value="#{bindings.West.inputValue}"
+                                                      label="#{bindings.West.hints.label}"
+                                                      required="#{bindings.West.hints.mandatory}" readOnly="true"
+                                                      columns="#{bindings.West.hints.displayWidth}"
+                                                      maximumLength="#{bindings.West.hints.precision}"
+                                                      shortDesc="#{bindings.West.hints.tooltip}" id="it10">
+                                            <f:validator binding="#{bindings.West.validator}"/>
+                                        </af:inputText>
+                                        <af:inputText value="#{bindings.Capital.inputValue}"
+                                                      label="#{bindings.Capital.hints.label}"
+                                                      required="#{bindings.Capital.hints.mandatory}" readOnly="true"
+                                                      columns="#{bindings.Capital.hints.displayWidth}"
+                                                      maximumLength="#{bindings.Capital.hints.precision}"
+                                                      shortDesc="#{bindings.Capital.hints.tooltip}" id="it11">
+                                            <f:validator binding="#{bindings.Capital.validator}"/>
+                                        </af:inputText>
+                                        <af:inputText value="#{bindings.Continentname.inputValue}"
+                                                      label="#{bindings.Continentname.hints.label}"
+                                                      required="#{bindings.Continentname.hints.mandatory}"
+                                                      readOnly="true"
+                                                      columns="#{bindings.Continentname.hints.displayWidth}"
+                                                      maximumLength="#{bindings.Continentname.hints.precision}"
+                                                      shortDesc="#{bindings.Continentname.hints.tooltip}" id="it12">
+                                            <f:validator binding="#{bindings.Continentname.validator}"/>
+                                        </af:inputText>
+                                        <af:inputText value="#{bindings.Continent.inputValue}"
+                                                      label="#{bindings.Continent.hints.label}"
+                                                      required="#{bindings.Continent.hints.mandatory}" readOnly="true"
+                                                      columns="#{bindings.Continent.hints.displayWidth}"
+                                                      maximumLength="#{bindings.Continent.hints.precision}"
+                                                      shortDesc="#{bindings.Continent.hints.tooltip}" id="it13">
+                                            <f:validator binding="#{bindings.Continent.validator}"/>
+                                        </af:inputText>
+                                        <af:inputText value="#{bindings.Languages.inputValue}"
+                                                      label="#{bindings.Languages.hints.label}"
+                                                      required="#{bindings.Languages.hints.mandatory}" readOnly="true"
+                                                      columns="#{bindings.Languages.hints.displayWidth}"
+                                                      maximumLength="#{bindings.Languages.hints.precision}"
+                                                      shortDesc="#{bindings.Languages.hints.tooltip}" id="it14">
+                                            <f:validator binding="#{bindings.Languages.validator}"/>
+                                        </af:inputText>
+                                        <af:inputText value="#{bindings.Isoalpha3.inputValue}"
+                                                      label="#{bindings.Isoalpha3.hints.label}"
+                                                      required="#{bindings.Isoalpha3.hints.mandatory}" readOnly="true"
+                                                      columns="#{bindings.Isoalpha3.hints.displayWidth}"
+                                                      maximumLength="#{bindings.Isoalpha3.hints.precision}"
+                                                      shortDesc="#{bindings.Isoalpha3.hints.tooltip}" id="it15">
+                                            <f:validator binding="#{bindings.Isoalpha3.validator}"/>
+                                        </af:inputText>
+                                        <af:inputText value="#{bindings.Geonameid.inputValue}"
+                                                      label="#{bindings.Geonameid.hints.label}"
+                                                      required="#{bindings.Geonameid.hints.mandatory}" readOnly="true"
+                                                      columns="#{bindings.Geonameid.hints.displayWidth}"
+                                                      maximumLength="#{bindings.Geonameid.hints.precision}"
+                                                      shortDesc="#{bindings.Geonameid.hints.tooltip}" id="it16">
+                                            <f:validator binding="#{bindings.Geonameid.validator}"/>
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.Geonameid.format}"/>
+                                        </af:inputText>
+                                        <f:facet name="footer">
+                                            <af:panelGroupLayout layout="horizontal" id="pgl1">
+                                                <af:button actionListener="#{bindings.First.execute}" text="First"
+                                                           disabled="#{!bindings.First.enabled}" partialSubmit="true"
+                                                           id="b1"/>
+                                                <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
+                                                           disabled="#{!bindings.Previous.enabled}" partialSubmit="true"
+                                                           id="b2"/>
+                                                <af:button actionListener="#{bindings.Next.execute}" text="Next"
+                                                           disabled="#{!bindings.Next.enabled}" partialSubmit="true"
+                                                           id="b3"/>
+                                                <af:button actionListener="#{bindings.Last.execute}" text="Last"
+                                                           disabled="#{!bindings.Last.enabled}" partialSubmit="true"
+                                                           id="b4"/>
+                                            </af:panelGroupLayout>
+                                        </f:facet>
+                                    </af:panelFormLayout>
+                                </af:showDetailItem>
+                            </af:panelAccordion>
+                        </f:facet>
+                    </af:panelSplitter>
+                </f:facet>
+                <f:facet name="header"/>
+                <f:facet name="branding"/>
+                <f:facet name="copyright"/>
+                <f:facet name="status"/>
+            </af:pageTemplate>
+        </af:form>
+    </af:document>
+</f:view>
